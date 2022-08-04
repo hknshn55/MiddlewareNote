@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Middleware.Extensions;
+using Middleware.Middlewares;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,7 @@ namespace Middleware
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddLogging();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -38,7 +40,7 @@ namespace Middleware
                 app.UseExceptionHandler("/Home/Error");
             }
             app.UseStaticFiles();//wwwroot içerisindeki dosyalarý kullanabilmemizi saðlar.
-
+            
             app.UseRouting();//Yollarýn eþleþebilmesi için ihtiyaç duyulur.
                              //Yazmadýðýmýz sürece endpointlerimiz yola ulaþamayacaktýr. 
 
@@ -46,7 +48,10 @@ namespace Middleware
             //Artýk her çalýþma esnasýnda middleware miz çalýþacaktýr.
             //Ara yazýlým denmesinin sebebi; Request(istek) ve Response(cevap) arasýnda yapýlmasýdýr.
             //Zaten arada yapýlmasa ara yazýlým dememiz saçma olurdu :D
-            app.UseExample();
+            //app.UseExample();
+
+            //Farklý bir middleware ekleme þekli. Aslýnda ayný ama yöntem farklý.
+            app.UseMiddleware<ExampleMiddleware>();
 
             app.UseAuthorization();
 

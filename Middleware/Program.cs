@@ -17,7 +17,14 @@ namespace Middleware
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
+            Host.CreateDefaultBuilder(args).ConfigureLogging(
+                      c =>
+                      {
+                          c.ClearProviders(); // Öncesinde tutulan bir log varsa temizlesin.
+                          c.AddDebug();
+                          c.AddConsole();
+
+                      })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();

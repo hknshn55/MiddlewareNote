@@ -10,17 +10,11 @@ namespace Middleware.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
-
         public IActionResult Index()
         {
+            int k = 5;
+            double a = k / 0;
             return View();
         }
-
     }
 }
