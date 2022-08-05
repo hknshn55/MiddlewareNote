@@ -1,0 +1,39 @@
+İstek atılan metod => GET
+Yol(URL) => /
+
+İstek atılan metod => GET
+Yol(URL) => /
+
+İstek atılan metod => GET
+Yol(URL) => /
+
+İstek atılan metod => GET
+Yol(URL) => /
+
+İstek atılan metod => GET
+Yol(URL) => /
+
+İstek atılan metod => GET
+Yol(URL) => /
+
+İstek atılan metod => GET
+Yol(URL) => /
+
+İstek atılan metod => GET
+Yol(URL) => /
+
+İstek atılan metod => GET
+Yol(URL) => /
+
+İstek atılan metod => GET
+Yol(URL) => /
+
+İstek atılan metod => GET
+Yol(URL) => /
+
+İstek atılan metod => GET
+Yol(URL) => /
+
+İstek atılan metod => GET
+Yol(URL) => /
+

@@ -12,8 +12,8 @@ namespace Middleware.Controllers
     {
         public IActionResult Index()
         {
-            int k = 5;
-            double a = k / 0;
+            //int k = 5;
+            //double a = k / 0;
             return View();
         }
     }

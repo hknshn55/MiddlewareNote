@@ -51,7 +51,13 @@ namespace Middleware
             //app.UseExample();
 
             //Farklý bir middleware ekleme þekli. Aslýnda ayný ama yöntem farklý.
-            app.UseMiddleware<ExampleMiddleware>();
+            //app.UseMiddleware<ExampleMiddleware>();
+
+
+            //Loglama için kullandýðým ara yazýlýmýmý dahil ettim. Aslýnda daha düzenli olan þekil extension üzerinden gelmektir. 
+            //Bunu þu þekilde düþünün biraz abartalým. 1000 adet middleware yazdýk diyelim. Startup içerisinin nasýl þiþeceðini düþünün.
+            //Bu yüzden doðru þekilde kabul edilen Extension üzerinden ekleme yapmaktýr.
+            app.UseMiddleware<LoggingMiddleware>();
 
             app.UseAuthorization();
 
